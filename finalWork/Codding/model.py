@@ -9,20 +9,20 @@ class AlexNet(nn.Module):
     def __init__(self):
         super().__init__()
 
-        self.mainbody = nn.Sequential(          # (3,32,32)  ->
-            nn.Conv2d(3, 64, 3, padding=1),     # (64,32,32) ->
+        self.mainbody = nn.Sequential(              # (3,32,32)  ->
+            nn.Conv2d(3, 64, 3, padding=1),         # (64,32,32) ->
             nn.ReLU(),
-            nn.MaxPool2d(2),                    # (64,16,16) ->
+            nn.MaxPool2d(kernel_size=2, stride=2),  # (64,16,16) ->
 
-            nn.Conv2d(64, 128, 3, padding=1),   # (128,16,16)->
+            nn.Conv2d(64, 128, 3, padding=1),       # (128,16,16)->
             nn.ReLU(),
-            nn.MaxPool2d(2),                    # (128,8,8)  ->
+            nn.MaxPool2d(kernel_size=2, stride=2),  # (128,8,8)  ->
 
-            nn.Conv2d(128, 256, 3, padding=1),  # (256,8,8)  ->
+            nn.Conv2d(128, 256, 3, padding=1),      # (256,8,8)  ->
             nn.ReLU(),
-            nn.MaxPool2d(2)                     # (256,4,4)  ->
+            nn.MaxPool2d(kernel_size=2, stride=2),  # (256,4,4)  ->
 
-            nn.Flatten(start_dim=1)             # (256*4*4)
+            nn.Flatten(start_dim=1)                 # (256*4*4)
         )
 
         self.fc = nn.Sequential(

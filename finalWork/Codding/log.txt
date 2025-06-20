@@ -1,0 +1,143 @@
+(.venv) liuzt@Udebian:~/Documents/Mars/CV4DL_Assignment/finalWork/Codding$ python3 main.py 
+model used:CNN
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+AlexNet                                  [64, 3, 32, 32]           [64, 10]                  --
+├─Sequential: 1-1                        [64, 3, 32, 32]           [64, 4096]                370,816
+├─Sequential: 1-2                        [64, 4096]                [64, 10]                  2,102,794
+===================================================================================================================
+Total params: 2,473,610
+Trainable params: 2,473,610
+Non-trainable params: 0
+Total mult-adds (Units.GIGABYTES): 2.67
+===================================================================================================================
+Input size (MB): 0.79
+Forward/backward pass size (MB): 58.99
+Params size (MB): 9.89
+Estimated Total Size (MB): 69.67
+===================================================================================================================
+Epoch [1/20], Loss: 1.0901, Val Acc: 66.50%
+--- best model renew ---
+Epoch [2/20], Loss: 0.1185, Val Acc: 72.52%
+--- best model renew ---
+Epoch [3/20], Loss: 0.6809, Val Acc: 74.16%
+--- best model renew ---
+Epoch [4/20], Loss: 0.3337, Val Acc: 75.54%
+--- best model renew ---
+Epoch [5/20], Loss: 0.0927, Val Acc: 75.40%
+Epoch [6/20], Loss: 0.0383, Val Acc: 75.18%
+Epoch [7/20], Loss: 0.3440, Val Acc: 74.86%
+Epoch [8/20], Loss: 0.2464, Val Acc: 76.22%
+--- best model renew ---
+Epoch [9/20], Loss: 0.0064, Val Acc: 75.96%
+Epoch [10/20], Loss: 0.3194, Val Acc: 75.34%
+Epoch [11/20], Loss: 0.0031, Val Acc: 75.84%
+Epoch [12/20], Loss: 0.0100, Val Acc: 75.00%
+Epoch [13/20], Loss: 0.0014, Val Acc: 75.50%
+Epoch [14/20], Loss: 0.0597, Val Acc: 75.24%
+Epoch [15/20], Loss: 0.0106, Val Acc: 75.82%
+Epoch [16/20], Loss: 0.0014, Val Acc: 75.48%
+Epoch [17/20], Loss: 0.0171, Val Acc: 74.66%
+Epoch [18/20], Loss: 0.0011, Val Acc: 74.96%
+Epoch [19/20], Loss: 0.0011, Val Acc: 75.08%
+Epoch [20/20], Loss: 0.0116, Val Acc: 75.64%
+best model TEST acc: 75.77%, total time: 59.89 s
+model state have been saved atCNN_best.pth
+(.venv) liuzt@Udebian:~/Documents/Mars/CV4DL_Assignment/finalWork/Codding$ python3 main.py 
+model used:RNN
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+LSTM                                     [64, 3, 32, 32]           [64, 10]                  --
+├─LSTM: 1-1                              [64, 32, 96]              [64, 32, 128]             247,808
+├─Linear: 1-2                            [64, 128]                 [64, 10]                  1,290
+===================================================================================================================
+Total params: 249,098
+Trainable params: 249,098
+Non-trainable params: 0
+Total mult-adds (Units.MEGABYTES): 507.59
+===================================================================================================================
+Input size (MB): 0.79
+Forward/backward pass size (MB): 2.10
+Params size (MB): 1.00
+Estimated Total Size (MB): 3.89
+===================================================================================================================
+Epoch [1/20], Loss: 2.3144, Val Acc: 41.52%
+--- best model renew ---
+Epoch [2/20], Loss: 1.7784, Val Acc: 48.22%
+--- best model renew ---
+Epoch [3/20], Loss: 1.6646, Val Acc: 52.20%
+--- best model renew ---
+Epoch [4/20], Loss: 1.0724, Val Acc: 54.24%
+--- best model renew ---
+Epoch [5/20], Loss: 0.9589, Val Acc: 56.24%
+--- best model renew ---
+Epoch [6/20], Loss: 0.5355, Val Acc: 58.38%
+--- best model renew ---
+Epoch [7/20], Loss: 1.6031, Val Acc: 58.40%
+--- best model renew ---
+Epoch [8/20], Loss: 1.1919, Val Acc: 58.72%
+--- best model renew ---
+Epoch [9/20], Loss: 0.5466, Val Acc: 58.70%
+Epoch [10/20], Loss: 0.4817, Val Acc: 59.28%
+--- best model renew ---
+Epoch [11/20], Loss: 0.7722, Val Acc: 59.46%
+--- best model renew ---
+Epoch [12/20], Loss: 0.9473, Val Acc: 59.46%
+Epoch [13/20], Loss: 0.5824, Val Acc: 59.18%
+Epoch [14/20], Loss: 0.9534, Val Acc: 58.90%
+Epoch [15/20], Loss: 0.1732, Val Acc: 58.74%
+Epoch [16/20], Loss: 0.3228, Val Acc: 58.84%
+Epoch [17/20], Loss: 0.5173, Val Acc: 58.68%
+Epoch [18/20], Loss: 1.2138, Val Acc: 58.46%
+Epoch [19/20], Loss: 0.1477, Val Acc: 58.98%
+Epoch [20/20], Loss: 1.0405, Val Acc: 58.12%
+best model TEST acc: 59.14%, total time: 59.45 s
+model state have been saved at RNN_best.pth
+(.venv) liuzt@Udebian:~/Documents/Mars/CV4DL_Assignment/finalWork/Codding$ python3 main.py 
+/home/liuzt/Documents/Mars/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:282: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+model used:ViT
+========================================================================================================================
+Layer (type:depth-idx)                        Input Shape               Output Shape              Param #
+========================================================================================================================
+ViT                                           [64, 3, 32, 32]           [64, 10]                  8,192
+├─Linear: 1-1                                 [64, 64, 48]              [64, 64, 128]             6,272
+├─TransformerEncoder: 1-2                     [64, 64, 128]             [64, 64, 128]             2,372,096
+├─Linear: 1-3                                 [64, 128]                 [64, 10]                  1,290
+========================================================================================================================
+Total params: 2,387,850
+Trainable params: 2,387,850
+Non-trainable params: 0
+Total mult-adds (Units.MEGABYTES): 135.39
+========================================================================================================================
+Input size (MB): 0.79
+Forward/backward pass size (MB): 322.97
+Params size (MB): 8.46
+Estimated Total Size (MB): 332.21
+========================================================================================================================
+Epoch [1/20], Loss: 2.3796, Val Acc: 11.94%
+--- best model renew ---
+Epoch [2/20], Loss: 2.1173, Val Acc: 18.20%
+--- best model renew ---
+Epoch [3/20], Loss: 2.2406, Val Acc: 16.04%
+Epoch [4/20], Loss: 2.1077, Val Acc: 15.06%
+Epoch [5/20], Loss: 2.2835, Val Acc: 13.46%
+Epoch [6/20], Loss: 2.3287, Val Acc: 13.88%
+Epoch [7/20], Loss: 2.3301, Val Acc: 13.00%
+Epoch [8/20], Loss: 2.2628, Val Acc: 12.86%
+Epoch [9/20], Loss: 2.0803, Val Acc: 15.76%
+Epoch [10/20], Loss: 2.3767, Val Acc: 15.70%
+Epoch [11/20], Loss: 2.3854, Val Acc: 14.62%
+Epoch [12/20], Loss: 2.2962, Val Acc: 14.90%
+Epoch [13/20], Loss: 2.3269, Val Acc: 15.72%
+Epoch [14/20], Loss: 2.4005, Val Acc: 13.48%
+Epoch [15/20], Loss: 2.2642, Val Acc: 10.00%
+Epoch [16/20], Loss: 2.3073, Val Acc: 10.52%
+Epoch [17/20], Loss: 2.3113, Val Acc: 10.62%
+Epoch [18/20], Loss: 2.3019, Val Acc: 10.00%
+Epoch [19/20], Loss: 2.3064, Val Acc: 9.72%
+Epoch [20/20], Loss: 2.2961, Val Acc: 9.50%
+best model TEST acc: 10.00%, total time: 277.61 s
+model state have been saved at ViT_best.pth
